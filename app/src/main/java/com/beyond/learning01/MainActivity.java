@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
     private static String calenderURL = "content://com.android.calendar/calendars";
     private static String calenderEventURL = "content://com.android.calendar/events";
     private static String calenderReminderURL = "content://com.android.calendar/reminders";
-
+    //检查是否有账户
     private static int checkCalendarAccount(Context context) {
         Cursor userCursor = context.getContentResolver().query(Uri.parse(calenderURL), null, null, null, null);
         try {
@@ -67,6 +67,8 @@ public class MainActivity extends Activity {
     private static String CALENDARS_ACCOUNT_NAME = "test@gmail.com";
     private static String CALENDARS_ACCOUNT_TYPE = "com.android.exchange";
     private static String CALENDARS_DISPLAY_NAME = "测试账户";
+
+    //添加账户
     private static long addCalendarAccount(Context context) {
         TimeZone timeZone = TimeZone.getDefault();
         ContentValues value = new ContentValues();
@@ -91,7 +93,7 @@ public class MainActivity extends Activity {
         long id = result == null ? -1 : ContentUris.parseId(result);
         return id;
     }
-
+    //验证是否添加了账户
     private static int checkAndAddCalendarAccount(Context context){
         int oldId = checkCalendarAccount(context);
         if( oldId >= 0 ){
@@ -105,6 +107,7 @@ public class MainActivity extends Activity {
             }
         }
     }
+    //添加事件
     public static void addCalendarEvent(Context context,String title, String description, long beginTime){
         // 获取日历账户的id
         int calId = checkAndAddCalendarAccount(context);

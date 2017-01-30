@@ -37,6 +37,7 @@ public class TaijiProvider extends AppWidgetProvider {
         RemoteViews remoteViews= new RemoteViews(context.getPackageName(), R.layout.taiji_provider);
         String action=intent.getAction();
         int imageNo= intent.getIntExtra("name",-1);
+        //反复显示两张图片
         if (IMAGEVIEW.equals(action)){
             System.out.println(i);
             i=(i+1)%2;
