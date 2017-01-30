@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Learning01</string>
+    <string name="Day">日期</string>
+    <string name="hour">小时</string>
+    <string name="minute">分钟</string>
+    <string name="title">beyond</string>
+    <string name="description">这不是演习，这不是演习。真的会提醒！</string>
+    <string name="button">创建提醒</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="imageView_intent">imageView</string>
+</resources>
